@@ -4,61 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-     body{
-        background: linear-gradient(to right, #001b44, #cafd24);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;    
-        overflow: hidden; 
-     }
-     section{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-     }
-     h2{
-        font-family: sans-serif;
-        color: white;
-     }
-     
-     .buttons{
-        display: flex;
-        gap: 10px;
-     }
-     button{
-        padding: 10px 40px;
-        margin: 10px;
-        border: none;
-        border-radius: 50px;
-        box-shadow: rgba(255, 255, 255, 0.165);
-     }
-     #btn1{
-        background-color:  #001b44;
-        color: white;
-     }
-     #btn2{
-        background-color: #cafd24;
-        color: black;
-     }
-     .copyCode{
-        /* backdrop-filter: blur(5px); */
-        font-style: italic;
-        background-color:rgba(47, 47, 47, 0.339);
-        border-left: 3px solid white;
-        border-radius: 10px;
-        color: white;
-        font-weight: 500;
-        width: 100%;
-        max-width: 500px;
-        font-family: 'Courier New', Courier, monospace;
-        padding: 20px;
-        font-size: 1em
-     }
-    </style>
+    <link rel="shortcut icon" href="/img/fav11.jpg">
+    <title>My Gradient website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -76,60 +24,8 @@
         </div>
     </section>
 
-    <script>
-        let btn1 = document.getElementById("btn1");
-        let btn2 = document.getElementById("btn2");
-        let rgb1 = "#001b44";
-        let rgb2 = "#cafd24";
-        let copyColor = document.querySelector(".copyCode");
-
-       const hexValues = () =>{
-        const myHexValues = "0123456789abcdef";
-            let colors = "#";
-            for (let i = 0; i < 6; i++) {
-                colors = colors + (myHexValues[Math.floor(Math.random() * 16)]);
-            }
-            return colors;
-       };
+    <script src="script.js">
        
-       const myPosition = () => {
-           const positions = ["right", "left", "top", "bottom"];
-           return positions[Math.floor(Math.random() * positions.length)];
-       };
-
-        const handleBtn1 = () => {
-            rgb1 = hexValues();
-            // console.log(rgb1);
-            let pos = myPosition();
-            document.body.style.background = `linear-gradient(to ${pos}, ${rgb1}, ${rgb2})`;
-            copyColor.innerHTML = `background: linear-gradient(to ${pos}, ${rgb1}, ${rgb2});`;
-            btn1.innerText = `${rgb1}`;
-        };
-
-        const handleBtn2 = () => {
-            rgb2 = hexValues();
-            // console.log(rgb2);
-            let pos2 = myPosition();
-            document.body.style.background = `linear-gradient(to ${pos2}, ${rgb1}, ${rgb2})`;
-            copyColor.innerHTML = `background-image: linear-gradient(to ${pos2}, ${rgb1}, ${rgb2});`;
-            btn2.innerText = `${rgb2}`;
-        };
-
-        btn1.addEventListener("click", handleBtn1)
-        btn2.addEventListener("click", handleBtn2)
-
-
-        // For Copy the the color property in the box 
-        copyColor.addEventListener("click", () => {
-            navigator.clipboard.writeText(copyColor.innerText);
-            alert("The background-color is copied");
-        });
-
-
-        // For Disbling Right Click 
-        document.addEventListener("contextmenu", function(e){
-            e.preventDefault()
-        },false);
     </script>
 </body>
 
