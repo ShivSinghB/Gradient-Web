@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body{
+        background-image: linear-gradient(to right, #001b44, #cafd24);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        overflow: hidden; 
+     }
+     section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+     
+     .buttons{
+        display: flex;
+        gap: 10px;
+     }
+     button{
+        padding: 10px 40px;
+        margin: 10px;
+        border: none;
+        border-radius: 50px;
+        box-shadow: rgba(255, 255, 255, 0.165);
+     }
+     #btn1{
+        background-color:  #001b44;
+        color: white;
+     }
+     #btn2{
+        background-color: #cafd24;
+        color: black;
+     }
+     .copyCode{
+        background-color:rgba(255, 255, 255, 0.165);
+        color: white;
+        width: 100%;
+        max-width: 500px;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 10px;
+        font-size: 1em
+     }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="buttons">
+            <button id="btn1">#051937</button>
+            <button id="btn2">#008793</button>
+        </div>
+
+        <h2>copy code from here</h2>
+
+        <div class="copyCode">
+            background-image: linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198))
+
+        </div>
+    </section>
+
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+
+        const handleBtn1 = () => {
+            const myHexValues = "0123456789abcdef";
+            let colors = "#";
+            for (let i = 0; i < 6; i++) {
+                colors = colors + (myHexValues[Math.floor(Math.random() * 16)]);
+            }
+            console.log(colors);
+
+        };
+
+        btn1.addEventListener("click", handleBtn1)
+        btn2.addEventListener("click", handleBtn2)
+    </script>
+</body>
+
+</html>
