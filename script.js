@@ -22,32 +22,32 @@ const handleBtn1 = () => {
     rgb1 = hexValues();
     // console.log(rgb1);
     let pos = myPosition();
-    document.body.style.background = `linear-gradient(to ${pos}, ${rgb1}, ${rgb2})`;
+    document.body.style.background = `linear-gradient(to ${pos}, ${rgb1}, ${rgb2})`;                                         //made                    
     copyColor.innerHTML = `background: linear-gradient(to ${pos}, ${rgb1}, ${rgb2});`;
     btn1.innerText = `${rgb1}`;
 };
 
 const handleBtn2 = () => {
     rgb2 = hexValues();
-    // console.log(rgb2);
-    let pos2 = myPosition();
+    // console.log(rgb2);                                        
+    let pos2 = myPosition();                                                                                                 //by
     document.body.style.background = `linear-gradient(to ${pos2}, ${rgb1}, ${rgb2})`;
     copyColor.innerHTML = `background-image: linear-gradient(to ${pos2}, ${rgb1}, ${rgb2});`;
     btn2.innerText = `${rgb2}`;
 };
 
 btn1.addEventListener("click", handleBtn1)
-btn2.addEventListener("click", handleBtn2)
+btn2.addEventListener("click", handleBtn2)                                                                                   //shiv
 
 
 // For Copy the the color property in the box 
 copyColor.addEventListener("click", () => {
     navigator.clipboard.writeText(copyColor.innerText);
-    alert("The background-color is copied");
+    alert("The background-color is copied");                                                                                 //singh
 });
 
 
 // For Disbling Right Click 
-document.addEventListener("contextmenu", function(e){
-    e.preventDefault()
+document.addEventListener("contextmenu", function(e){                                                                        //baghel
+    e.preventDefault() 
 },false);
