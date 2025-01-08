@@ -32,7 +32,7 @@ const handleBtn2 = () => {
     // console.log(rgb2);                                        
     let pos2 = myPosition();                                                                                                 //by
     document.body.style.background = `linear-gradient(to ${pos2}, ${rgb1}, ${rgb2})`;
-    copyColor.innerHTML = `background-image: linear-gradient(to ${pos2}, ${rgb1}, ${rgb2});`;
+    copyColor.innerHTML = `background: linear-gradient(to ${pos2}, ${rgb1}, ${rgb2});`;
     btn2.innerText = `${rgb2}`;
 };
 
